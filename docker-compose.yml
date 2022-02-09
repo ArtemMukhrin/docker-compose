@@ -10,6 +10,8 @@ services:
 
   prod:
    image: tomcat
+   depends_on:
+     - builder
    volumes:
      - type: volume
        source: webdata
