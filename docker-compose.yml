@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  builder:
+    build:
+      context: ""
+
+  prod:
+   image: tomcat
+   volumes:
+     - ""
+   ports:
+     - '8080:8080'
+
+
+
