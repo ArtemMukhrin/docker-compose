@@ -2,15 +2,24 @@ version: '3.2'
 
 services:
   builder:
-    build:
-      context: ""
+    build: resources
+    volumes:
+      - type: volume
+        source: webdata
+        target: /home/ubuntu/webdata
 
   prod:
    image: tomcat
    volumes:
-     - ""
+     - type: volume
+       source: webdata
+       target: $CATALINA_HOME/webapps/
+
    ports:
      - '8080:8080'
+
+volumes:
+  webdata:
 
 
 
